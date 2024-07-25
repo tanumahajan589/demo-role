@@ -1,0 +1,13 @@
+---
+# tasks file for test
+- name: Install apache
+  ansible.builtin.yum:
+    name: httpd
+    state: latest
+- name: copy file
+  ansible.builtin.copy:
+    src: files/index.html
+    dest: /var/www/html
+    mode: 777
+    owner: root
+    group: root
